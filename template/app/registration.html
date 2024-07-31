@@ -1,0 +1,48 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %} category {% endblock title %}
+
+{% block main-content %}
+   <div class="container mt-3 ">
+        <div class="row my-3">
+            <div class="col-sm-6 offset-3">
+                <h3 class="text-center">Customer Registration</h3>
+                <hr>
+                {% if errmsg %}
+                <div class="alert alert-danger">
+                    {{errmsg}}
+                </div>
+                {% endif %}
+                <form action="/ragistration" method="POST" class="mt-5 shadow p-4 rounded-2">
+                   
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="Input1" class="form-label"><strong>Username:</strong></label>
+                        <input type="text" name="uname" class="form-control" id="Input1" placeholder="Enater Username">
+                    </div><!-----username-->
+                    <div class="mb-3">
+                        <label for="Input2" class="form-label"><strong>Password:</strong></label>
+                        <input type="password" name="upass" class="form-control" id="Input2" placeholder="Enater Password">
+                    </div><!-----Password-->
+                    <div class="mb-3">
+                        <label for="Input3" class="form-label"><strong>Comform Password:</strong></label>
+                        <input type="password" name="ucpass" class="form-control" id="Input3" placeholder="Enater conform Password">
+                    </div><!-----conform password-->
+                    <div class="mb-3">
+                        <input type="submit" class="btn w-100" value="Sign Up" style="background-color: #B9D719; border: none; border-radius: 8px; padding: 8px; color: white;">
+                        
+                    </div><!-----register-->
+                    <div class="text-center">
+                        Already Member?<a href="{% url 'user_login' %}" style="text-decoration: none;">Login</a>
+                    </div>
+                    {% if success %}
+                        <div class="alert alert-success">
+                            {{success}}
+                        </div>
+
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+   </div>
+{% endblock main-content %}

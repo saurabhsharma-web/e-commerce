@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %} Searech Result  {% endblock title %}
+
+{% block main-content %}
+   <div class="container my-5">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="row">
+                {% for item in product %}
+                <div class="col-sm-4 text-center mb-4 hover-shadow">
+                    <a href="{% url 'productdetails' item.id %}" class="btn">
+                        <div>
+                            <img src="{{ item.product_image.url }}" alt="" width="300px" height="200px" class="img-fluid shadow-sm">
+                            <div class="fw-bold">{{ item.title }}</div>
+                            <div class="fw-bold text-danger">Rs.{{ item.descount_price }}/-</div>
+                            <small class="fw-light text-deleoration-line-through">{{itme.selling_price}}</small>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+   </div>
+{% endblock main-content %}

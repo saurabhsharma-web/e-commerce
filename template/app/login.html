@@ -1,0 +1,52 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %} category {% endblock title %}
+
+{% block main-content %}
+   <div class="container mt-3 ">
+        <div class="row my-3">
+            <div class="col-sm-6 offset-3">
+                <h3 class="text-center">Customer Login</h3>
+                <hr>
+                {% if errmsg %}
+                <div class="alert alert-danger">
+                    {{errmsg}}
+                </div>
+                {% endif %}
+                {% if errmsg %}
+                <div class="alert alert-danger">
+                    {{errmsg}}
+                </div>
+                {% endif %}
+                <form action="{% url 'user_login' %}" method="POST" class="mt-5 shadow p-4 rounded-2">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="Input1" class="form-label"><strong>Username:</strong></label>
+                        <input type="text" name="uname" class="form-control" id="Input1" placeholder="Enater Username">
+                    </div><!-----username-->
+                    <div class="mb-3">
+                        <label for="Input2" class="form-label"><strong>Password:</strong></label>
+                        <input type="password" name="upass" class="form-control" id="Input2" placeholder="Enater Password">
+                    </div><!-----Password-->
+                   
+                    <div class="mb-3 pt-3" >
+                        <input type="submit" class="btn w-100" value="Login" style="background-color: #B9D719; border: none; border-radius: 8px; padding: 8px; color: white;">
+                       
+
+                    </div><!-----register-->
+                    
+                    
+                     
+                    <div>
+                        <h2 style=" width: 100%; text-align: center; border-bottom: 1px solid #6b6f6e; line-height: 2px; margin-top: 30px; margin-bottom: 4px;">
+                            <span style=" background-color: #4a4f30;  font-size: 20px; color: white; padding: 0 10px; font-weight: lighter;">OR</span>
+                        </h2>
+                    </div>
+                    <p class="text-center pt-4 pb-0">Not Member? <a href="{% url 'ragistration' %}" style="text-decoration: none; ;">Sign up </span></a>
+
+                    
+                </form>
+            </div>
+        </div>
+   </div>
+{% endblock main-content %}

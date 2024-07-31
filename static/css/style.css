@@ -1,0 +1,32 @@
+
+.buttermilk{
+    background-color: #ffff;
+    background-image: linear-gradient(#fff7ef,#fff);
+    padding: 50px 40px;
+    border: 1px solid #efe8e1;
+    padding-bottom: 20px;
+}
+.curdmilk{
+    background-color: #ffff;
+    background-image: linear-gradient(#fff7ef,#e0cfcf);
+    padding: 50px 40px;
+    border: 1px solid #efe8e1;
+    padding-bottom: 20px;
+}
+
+
+.milkgheess{
+    background-color: #ffff;
+    background-image: linear-gradient(#fff7ef,#d68e8e);
+    padding: 50px 40px;
+    border: 1px solid #efe8e1;
+    padding-bottom: 20px;
+}
+.milk{
+    color:black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+}
+
+
+
